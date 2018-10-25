@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,7 +675,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="ProgressBar_Demo" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -683,9 +685,8 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="ProgressBar Demo" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <connections>
@@ -703,11 +704,56 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="ProgressBar_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="nqi-Qn-0RT" customClass="ProgressBarView" customModule="ProgressBar_Demo" customModuleProvider="target">
+                                <rect key="frame" x="90" y="127" width="300" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="kso-1U-V4l"/>
+                                    <constraint firstAttribute="height" constant="16" id="qhd-kF-3JS"/>
+                                </constraints>
+                            </customView>
+                            <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OhG-Sb-j26">
+                                <rect key="frame" x="88" y="80" width="304" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="te5-bK-b1Y"/>
+                                    <constraint firstAttribute="height" constant="15" id="zKk-oW-ppn"/>
+                                </constraints>
+                                <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="0.98499999999999999" tickMarkPosition="above" sliderType="linear" id="Fmz-f4-O55"/>
+                                <connections>
+                                    <action selector="sliderMoved:" target="XfG-lQ-9wD" id="3lA-Ft-6UN"/>
+                                </connections>
+                            </slider>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8mN-eU-Kn7">
+                                <rect key="frame" x="218" y="163" width="44" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="dED-88-Dv8"/>
+                                    <constraint firstAttribute="width" constant="40" id="iBE-Zk-wX1"/>
+                                </constraints>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" id="x8e-mH-cWQ">
+                                    <font key="font" metaFont="systemBold"/>
+                                    <color key="textColor" red="0.54117647058823526" green="0.61176470588235299" blue="0.85490196078431369" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="8mN-eU-Kn7" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="48r-MF-9yq"/>
+                            <constraint firstItem="OhG-Sb-j26" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="9Xe-dK-uKh"/>
+                            <constraint firstItem="nqi-Qn-0RT" firstAttribute="top" secondItem="8mN-eU-Kn7" secondAttribute="bottom" constant="20" id="Lja-rb-HC7"/>
+                            <constraint firstItem="nqi-Qn-0RT" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="ebx-XM-Mso"/>
+                            <constraint firstItem="nqi-Qn-0RT" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="paR-Nj-1Jb"/>
+                            <constraint firstItem="OhG-Sb-j26" firstAttribute="top" secondItem="nqi-Qn-0RT" secondAttribute="bottom" constant="30" id="t8q-Jb-4qQ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="percentLabel" destination="8mN-eU-Kn7" id="Qio-sL-a5C"/>
+                        <outlet property="progressBarView" destination="nqi-Qn-0RT" id="tLw-tr-ABd"/>
+                        <outlet property="slider" destination="OhG-Sb-j26" id="6rZ-Ia-F3t"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -11,6 +11,8 @@
 		57E7683121825DB300C144CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E7683021825DB300C144CD /* ViewController.swift */; };
 		57E7683321825DB500C144CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57E7683221825DB500C144CD /* Assets.xcassets */; };
 		57E7683621825DB500C144CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57E7683421825DB500C144CD /* Main.storyboard */; };
+		57E7683F21825E3400C144CD /* ProgressBarDraw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E7683E21825E3400C144CD /* ProgressBarDraw.swift */; };
+		57E7684121825EAD00C144CD /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E7684021825EAD00C144CD /* ProgressBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		57E7683521825DB500C144CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		57E7683721825DB500C144CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57E7683821825DB500C144CD /* ProgressBar_Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ProgressBar_Demo.entitlements; sourceTree = "<group>"; };
+		57E7683E21825E3400C144CD /* ProgressBarDraw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBarDraw.swift; sourceTree = "<group>"; };
+		57E7684021825EAD00C144CD /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,8 +57,10 @@
 		57E7682D21825DB300C144CD /* ProgressBar Demo */ = {
 			isa = PBXGroup;
 			children = (
+				57E7683E21825E3400C144CD /* ProgressBarDraw.swift */,
 				57E7682E21825DB300C144CD /* AppDelegate.swift */,
 				57E7683021825DB300C144CD /* ViewController.swift */,
+				57E7684021825EAD00C144CD /* ProgressBarView.swift */,
 				57E7683221825DB500C144CD /* Assets.xcassets */,
 				57E7683421825DB500C144CD /* Main.storyboard */,
 				57E7683721825DB500C144CD /* Info.plist */,
@@ -95,6 +101,11 @@
 				TargetAttributes = {
 					57E7682A21825DB300C144CD = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -133,6 +144,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57E7683F21825E3400C144CD /* ProgressBarDraw.swift in Sources */,
+				57E7684121825EAD00C144CD /* ProgressBarView.swift in Sources */,
 				57E7683121825DB300C144CD /* ViewController.swift in Sources */,
 				57E7682F21825DB300C144CD /* AppDelegate.swift in Sources */,
 			);
@@ -271,7 +284,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "ProgressBar Demo/ProgressBar_Demo.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 358WHQF94W;
@@ -290,7 +302,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "ProgressBar Demo/ProgressBar_Demo.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 358WHQF94W;

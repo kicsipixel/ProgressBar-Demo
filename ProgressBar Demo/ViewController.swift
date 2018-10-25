@@ -10,18 +10,29 @@ import Cocoa
 
 class ViewController: NSViewController {
 
+    @IBOutlet var progressBarView: ProgressBarView!
+    @IBOutlet var slider: NSSlider!
+    @IBOutlet var percentLabel: NSTextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
+        
+        // Set the Window background to white
+        if self.view.layer != nil {
+            let whiteColor = NSColor.white
+            self.view.layer?.backgroundColor = whiteColor.cgColor
         }
     }
 
-
+    @IBAction func sliderMoved(_ sender: Any) {
+        progressBarView.progress = CGFloat(slider.floatValue)
+        
+        // Show the progess in percentage
+        let percentValue = slider.floatValue / Float(slider.maxValue) * 100
+        let percentValueString = String(format: "%.0f", percentValue)
+        percentLabel.stringValue = "\(percentValueString)%"
+        
+    }
+    
 }
 
