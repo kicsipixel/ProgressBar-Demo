@@ -1,7 +1,7 @@
 
 ## ProgressBar Demo
 Based on [Devslopes](https://www.devslopes.com/) video on [Youtube](https://www.youtube.com/watch?v=UtVNxFMzGXw). macOS app with progessbar.
-![](progress.png)
+![](demo.gif)
 
 
 ### LICENSE
